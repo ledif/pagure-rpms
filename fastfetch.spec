@@ -1,6 +1,6 @@
 Name:           fastfetch
 Version:        1.6.4
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Like neofetch, but much faster because written in c
 
 License:        MIT
@@ -10,7 +10,6 @@ Source0:        %{url}/archive/%{version}/%{name}-%{version}.tar.gz
 BuildRequires:  cmake
 BuildRequires:  gcc
 BuildRequires:  pciutils-devel
-BuildRequires:  vulkan-loader-devel
 BuildRequires:  wayland-devel
 BuildRequires:  libxcb-devel
 BuildRequires:  libXrandr-devel
@@ -24,6 +23,14 @@ BuildRequires:  mesa-libOSMesa-devel
 BuildRequires:  xfconf-devel
 BuildRequires:  glib2-devel
 BuildRequires:  ocl-icd-devel
+# vulkan-loader not available in el8 on some arches
+%if 0%{?rhel} == 8
+  %if "%{_arch}" != "s390x" && "%{_arch}" != "ppc64le"
+BuildRequires:  vulkan-loader-devel
+  %endif
+%else
+BuildRequires:  vulkan-loader-devel
+%endif
 %if 0%{?fedora} > 36
 BuildRequires:  chafa-devel
 %endif
@@ -89,6 +96,9 @@ BuildArch: noarch
 %{_datadir}/bash-completion/completions/%{name}
 
 %changelog
+* Mon Aug 22 2022 Jonathan Wright <jonathan@almalinux.org> - 1.6.4-2
+- Fix spec for EPEL8 builds
+
 * Tue Aug 16 2022 Jonathan Wright <jonathan@almalinux.org> - 1.6.4-1
 - Initial package build
 - khbz#2118887
