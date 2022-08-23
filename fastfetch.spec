@@ -1,6 +1,6 @@
 Name:           fastfetch
-Version:        1.6.4
-Release:        3%{?dist}
+Version:        1.6.5
+Release:        1%{?dist}
 Summary:        Like neofetch, but much faster because written in c
 
 License:        MIT
@@ -97,6 +97,11 @@ BuildArch: noarch
 %{_datadir}/bash-completion/completions/%{name}
 
 %changelog
+* Tue Aug 23 2022 Jonathan Wright <jonathan@almalinux.org> - 1.6.5-1
+- Update to 1.6.5
+- rhbz#2120472
+- Fix typo in first changelog citing "khbz" instead of "rhbz"
+
 * Mon Aug 22 2022 Jonathan Wright <jonathan@almalinux.org> - 1.6.4-3
 - Compile with rpm support for listing package counts
 
@@ -105,4 +110,4 @@ BuildArch: noarch
 
 * Tue Aug 16 2022 Jonathan Wright <jonathan@almalinux.org> - 1.6.4-1
 - Initial package build
-- khbz#2118887
+- rhbz#2118887
