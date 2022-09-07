@@ -1,5 +1,5 @@
 Name:           fastfetch
-Version:        1.6.5
+Version:        1.7.0
 Release:        1%{?dist}
 Summary:        Like neofetch, but much faster because written in c
 
@@ -97,6 +97,10 @@ BuildArch: noarch
 %{_datadir}/bash-completion/completions/%{name}
 
 %changelog
+* Wed Sep 07 2022 Jonathan Wright <jonathan@almalinux.org> - 1.7.0-1
+- Update to 1.7.0
+- rhbz#2124866
+
 * Tue Aug 23 2022 Jonathan Wright <jonathan@almalinux.org> - 1.6.5-1
 - Update to 1.6.5
 - rhbz#2120472
