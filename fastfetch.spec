@@ -50,6 +50,9 @@ Recommends:     ocl-icd
 Recommends:     chafa
 %endif
 
+# https://github.com/LinusDierheimer/fastfetch/issues/401
+Patch:          add_s390x_support.patch
+
 %description
 fastfetch is a neofetch-like tool for fetching system information and
 displaying them in a pretty way. It is written in c to achieve much better
