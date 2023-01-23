@@ -100,6 +100,9 @@ BuildArch: noarch
 * Mon Jan 23 2023 Jonathan Wright <jonathan@almalinux.org> - 1.9.0-1
 - Update to 1.9.0 rhbz#2163335
 
+* Thu Jan 19 2023 Fedora Release Engineering <releng@fedoraproject.org> - 1.8.2-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_38_Mass_Rebuild
+
 * Mon Jan 02 2023 Jonathan Wright <jonathan@almalinux.org> - 1.8.2-1
 - Update to 1.8.2 rhbz#2156978
 
