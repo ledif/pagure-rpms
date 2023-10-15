@@ -25,7 +25,10 @@ BuildRequires:  xfconf-devel
 BuildRequires:  glib2-devel
 BuildRequires:  ocl-icd-devel
 BuildRequires:  rpm-devel
+# not available on s390x
+%if "%{_arch}" != "s390x"
 BuildRequires:  libddcutil-devel
+%endif
 # vulkan-loader not available in el8 on some arches
 %if 0%{?rhel} == 8
   %if "%{_arch}" != "s390x" && "%{_arch}" != "ppc64le"
