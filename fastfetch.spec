@@ -1,6 +1,6 @@
 Name:           fastfetch
 Version:        2.9.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Like neofetch, but much faster because written in c
 
 License:        MIT
@@ -11,7 +11,7 @@ BuildRequires:  cmake
 BuildRequires:  python3
 BuildRequires:  gcc
 BuildRequires:  gcc-c++
-BuildRequires:  pciutils-devel
+BuildRequires:  hwdata-devel
 BuildRequires:  wayland-devel
 BuildRequires:  libxcb-devel
 BuildRequires:  libXrandr-devel
@@ -43,7 +43,7 @@ BuildRequires:  vulkan-loader-devel
 %endif
 BuildRequires:  chafa-devel
 
-Recommends:     pciutils
+Recommends:     hwdata
 Recommends:     libxcb
 Recommends:     libXrandr
 Recommends:     dconf
@@ -120,6 +120,9 @@ BuildArch: noarch
 %{_datadir}/fish/vendor_completions.d/%{name}.fish
 
 %changelog
+* Sat Apr 13 2024 Jonathan Wright <jonathan@almalinux.org> - 2.9.1-2
+- swap pciutils to hwdata per upstream
+
 * Sat Apr 13 2024 Jonathan Wright <jonathan@almalinux.org> - 2.9.1-1
 - update to 2.9.1 rhbz#2273299
 
