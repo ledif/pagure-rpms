@@ -1,6 +1,6 @@
 Name:           fastfetch
 Version:        2.9.1
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Like neofetch, but much faster because written in c
 
 License:        MIT
@@ -42,6 +42,7 @@ BuildRequires:  vulkan-loader-devel
 BuildRequires:  vulkan-loader-devel
 %endif
 BuildRequires:  chafa-devel
+BuildRequires:  yyjson-devel
 
 Recommends:     hwdata
 Recommends:     libxcb
@@ -93,7 +94,7 @@ BuildArch: noarch
 
 
 %build
-%cmake -D BUILD_TESTS=ON
+%cmake -DBUILD_TESTS=ON -DENABLE_SYSTEM_YYJSON=ON
 %cmake_build
 
 
@@ -120,6 +121,9 @@ BuildArch: noarch
 %{_datadir}/fish/vendor_completions.d/%{name}.fish
 
 %changelog
+* Fri Apr 26 2024 Felix Wang <topazus@outlook.com> - 2.9.1-3
+- Use yyjson system dependency
+
 * Sat Apr 13 2024 Jonathan Wright <jonathan@almalinux.org> - 2.9.1-2
 - swap pciutils to hwdata per upstream
 
