@@ -1,6 +1,6 @@
 Name:           fastfetch
-Version:        2.9.1
-Release:        3%{?dist}
+Version:        2.11.0
+Release:        1%{?dist}
 Summary:        Like neofetch, but much faster because written in c
 
 License:        MIT
@@ -121,6 +121,9 @@ BuildArch: noarch
 %{_datadir}/fish/vendor_completions.d/%{name}.fish
 
 %changelog
+* Tue Apr 30 2024 Jonathan Wright <jonathan@almalinux.org> - 2.11.0-1
+- update to 2.11.0 rhbz#2275393
+
 * Fri Apr 26 2024 Felix Wang <topazus@outlook.com> - 2.9.1-3
 - Use yyjson system dependency
 
