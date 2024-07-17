@@ -1,6 +1,6 @@
 Name:           fastfetch
 Version:        2.17.2
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Like neofetch, but much faster because written in c
 
 License:        MIT
@@ -121,6 +121,9 @@ BuildArch: noarch
 %{_datadir}/fish/vendor_completions.d/%{name}.fish
 
 %changelog
+* Wed Jul 17 2024 Fedora Release Engineering <releng@fedoraproject.org> - 2.17.2-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_41_Mass_Rebuild
+
 * Thu Jul 04 2024 Jonathan Wright <jonathan@almalinux.org> - 2.17.2-1
 - update to 2.17.2 rhbz#2295466
 
