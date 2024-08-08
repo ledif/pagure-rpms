@@ -1,5 +1,5 @@
 Name:           fastfetch
-Version:        2.20.0
+Version:        2.21.0
 Release:        1%{?dist}
 Summary:        Like neofetch, but much faster because written in c
 
@@ -28,7 +28,6 @@ BuildRequires:  ocl-icd-devel
 BuildRequires:  rpm-devel
 BuildRequires:  libdrm-devel
 BuildRequires:  pulseaudio-libs-devel
-BuildRequires:  NetworkManager-libnm-devel
 # not available on s390x
 %if "%{_arch}" != "s390x"
 BuildRequires:  libddcutil-devel
@@ -58,7 +57,6 @@ Recommends:     chafa
 Recommends:     ddcutil
 Recommends:     libdrm
 Recommends:     pulseaudio-libs
-Recommends:     NetworkManager-libnm
 
 %description
 fastfetch is a neofetch-like tool for fetching system information and
@@ -121,6 +119,9 @@ BuildArch: noarch
 %{_datadir}/fish/vendor_completions.d/%{name}.fish
 
 %changelog
+* Thu Aug 08 2024 Jonathan Wright <jonathan@almalinux.org> - 2.21.0-1
+- update to 2.21.0 rhbz#2299617
+
 * Fri Jul 26 2024 Jonathan Wright <jonathan@almalinux.org> - 2.20.0-1
 - update to 2.20.0 rhbz#2299617
 
