@@ -58,6 +58,8 @@ Recommends:     ddcutil
 Recommends:     libdrm
 Recommends:     pulseaudio-libs
 
+ExcludeArch:    %{ix86}
+
 %description
 fastfetch is a neofetch-like tool for fetching system information and
 displaying them in a pretty way. It is written in c to achieve much better
