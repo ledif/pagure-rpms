@@ -1,5 +1,5 @@
 Name:           fastfetch
-Version:        2.21.0
+Version:        2.21.1
 Release:        1%{?dist}
 Summary:        Like neofetch, but much faster because written in c
 
@@ -28,6 +28,7 @@ BuildRequires:  ocl-icd-devel
 BuildRequires:  rpm-devel
 BuildRequires:  libdrm-devel
 BuildRequires:  pulseaudio-libs-devel
+BuildRequires:  elfutils-libelf-devel
 # not available on s390x
 %if "%{_arch}" != "s390x"
 BuildRequires:  libddcutil-devel
@@ -57,6 +58,7 @@ Recommends:     chafa
 Recommends:     ddcutil
 Recommends:     libdrm
 Recommends:     pulseaudio-libs
+Recommends:     elfutils-libelf
 
 ExcludeArch:    %{ix86}
 
@@ -121,6 +123,9 @@ BuildArch: noarch
 %{_datadir}/fish/vendor_completions.d/%{name}.fish
 
 %changelog
+* Sat Aug 10 2024 Jonathan Wright <jonathan@almalinux.org> - 2.21.1-1
+- update to 1.21.1 rhbz#2303930
+
 * Thu Aug 08 2024 Jonathan Wright <jonathan@almalinux.org> - 2.21.0-1
 - update to 2.21.0 rhbz#2299617
 
