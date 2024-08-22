@@ -1,5 +1,5 @@
 Name:           fastfetch
-Version:        2.21.1
+Version:        2.21.3
 Release:        1%{?dist}
 Summary:        Like neofetch, but much faster because written in c
 
@@ -123,6 +123,9 @@ BuildArch: noarch
 %{_datadir}/fish/vendor_completions.d/%{name}.fish
 
 %changelog
+* Thu Aug 22 2024 Jonathan Wright <jonathan@almalinux.org> - 2.21.3-1
+- update to 2.21.3 rhbz#2304804
+
 * Sat Aug 10 2024 Jonathan Wright <jonathan@almalinux.org> - 2.21.1-1
 - update to 1.21.1 rhbz#2303930
 
