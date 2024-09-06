@@ -1,5 +1,5 @@
 Name:           fastfetch
-Version:        2.21.3
+Version:        2.23.0
 Release:        1%{?dist}
 Summary:        Like neofetch, but much faster because written in c
 
@@ -80,6 +80,17 @@ BuildArch: noarch
 %{summary}
 
 
+%package zsh-completion
+Summary: ZSH completion files for %{name}
+Requires: zsh
+Requires: %{name} = %{version}-%{release}
+BuildArch: noarch
+
+
+%description zsh-completion
+%{summary}
+
+
 %package fish-completion
 Summary: Fish completion files for %{name}
 Requires: fish
@@ -122,7 +133,13 @@ BuildArch: noarch
 %files fish-completion
 %{_datadir}/fish/vendor_completions.d/%{name}.fish
 
+%files zsh-completion
+%{_datadir}/zsh/site-functions/_%{name}
+
 %changelog
+* Fri Sep 06 2024 Jonathan Wright <jonathan@almalinux.org> - 2.23.0-1
+- update to 2.23.0 rhbz#2308109
+
 * Thu Aug 22 2024 Jonathan Wright <jonathan@almalinux.org> - 2.21.3-1
 - update to 2.21.3 rhbz#2304804
 
