@@ -1,5 +1,5 @@
 Name:           fastfetch
-Version:        2.31.0
+Version:        2.32.1
 Release:        1%{?dist}
 Summary:        Like neofetch, but much faster because written in c
 
@@ -22,7 +22,10 @@ BuildRequires:  ImageMagick-devel
 BuildRequires:  zlib-devel
 BuildRequires:  libglvnd-devel
 BuildRequires:  mesa-libOSMesa-devel
+# conditionalize xfconf until it is built for epel10
+%if 0%{?rhel} != 10
 BuildRequires:  xfconf-devel
+%endif
 BuildRequires:  glib2-devel
 BuildRequires:  ocl-icd-devel
 BuildRequires:  rpm-devel
@@ -137,6 +140,9 @@ BuildArch: noarch
 %{_datadir}/zsh/site-functions/_%{name}
 
 %changelog
+* Thu Dec 19 2024 Jonathan Wright <jonathan@almalinux.org> - 2.32.1-1
+- update to 2.32.1 rhbz#2332949
+
 * Sun Dec 15 2024 Jonathan Wright <jonathan@almalinux.org> - 2.31.0-1
 - update to 2.31.0 rhbz#2326886
 
